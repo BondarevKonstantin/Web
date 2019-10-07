@@ -1,0 +1,466 @@
+// mixins and cs
+
+@font-face
+    font-family: 'ProximaNova_bold'
+    src: url('../fonts/ProximaNova-Bold.eot')
+    src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/ProximaNova-Bold.woff2') format('woff2'), url('../fonts/ProximaNova-Bold.woff') format('woff'), url('../fonts/ProximaNova-Bold.ttf') format('truetype'), url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg')
+    font-weight: bold
+    font-style: normal
+
+
+@font-face
+    font-family: 'ProximaNova_reg'
+    src: url('/fonts/ProximaNova-Regular.eot')
+    src: url('/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/ProximaNova-Regular.woff2') format('woff2'),url('../fonts/ProximaNova-Regular.woff') format('woff'),url('../fonts/ProximaNova-Regular.ttf') format('truetype'),url('/fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg')
+    font-weight: normal
+    font-style: normal
+
+@mixin reg
+    font-family: 'ProximaNova_reg', sans-serif
+
+@mixin bold
+    font-family: 'ProximaNova_bold', sans-serif
+
+// colors
+
+$btn-color: #fbb202
+$ico-color: #49bf15
+$cross: #ff0000
+$greenblock: #286c0a
+$textcolor: #292929
+
+// basic settings
+
+html
+    font-size: 10px
+
+body
+    @include reg
+
+button, input, a, textarea
+    &:focus
+        outline: none
+
+a:hover
+    text-decoration: none
+
+.form
+    margin-top: 3.5rem
+    padding: 3rem 5rem
+    background-color: #fff
+    text-align: center
+    &-header
+        margin-bottom: 3rem
+        font-size: 1.8rem
+        strong
+            @include bold
+            font-size: 1.9rem
+            font-weight: 700
+    &-input
+        padding: 0 1rem
+        margin-bottom: 2rem
+        width: 100%
+        height: 5rem
+        border-radius: 5px
+        border: 1px solid #dddddd
+    button
+        padding: 2rem 4rem
+        width: 100%
+        margin-bottom: 1rem
+    label
+        padding: 0.5rem
+        background-color: #fff
+        position: absolute
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+
+.button
+    background-color: $btn-color
+    color: #ffffff
+    border-radius: 10px
+    text-transform: uppercase
+    border: none
+    transition: all 0.2s
+    &:hover
+        background-color: darken($btn-color, 5%)
+
+// typography
+
+section
+    padding: 6rem 0
+
+// main
+
+.main
+    background: #ffffff url(../pic/main-bg.png) center center no-repeat
+    background-size: cover
+    padding: 3rem 0
+    &-button
+        padding: 1rem 2.7rem
+    &-content
+        margin-top: 7rem
+        .main-title
+            @include bold
+            font-size: 3.6rem
+            line-height: 5rem
+            text-transform: uppercase
+        .main-subtitle
+            margin-bottom:  4rem
+            font-size: 2.4rem
+        span
+            color: #fff
+            background-color: $ico-color
+            @include reg
+            font-size: 1.8rem
+            display: inline-block
+            text-align: center
+            padding: 2rem 4rem
+            strong
+                font-size: 3rem
+                @include bold
+    &-h2
+        strong
+                text-align: center
+                color: $textcolor
+                @include bold
+                font-size: 2.2rem
+                text-transform: uppercase
+
+
+
+
+.header
+    height: 7rem
+
+.phone-link
+    display: inline-block
+    color: $textcolor
+    font-weight: 900
+    font-size: 2rem
+    height: 7rem
+    line-height: 7rem
+
+.wrap
+    display: table
+    width: 100%
+    height: 7rem
+    &-block
+        display: table-cell
+        vertical-align: middle
+
+// features section
+.section-header
+    @include bold
+    margin-bottom: 10rem
+    text-align: center
+    font-size: 3.6rem
+    font-weight: 700
+
+.features
+    &-block
+        text-align: center
+        h3
+            @include bold
+            margin-top: 6rem
+            margin-bottom: 2rem
+            font-size: 2rem
+            font-weight: 700
+        p
+            display: block
+            margin: 0 auto
+            font-size: 1.5rem
+            line-height: 2rem
+            width: 83%
+    &-img
+        height: 6rem
+        img
+            display: block
+            margin: 0 auto
+
+.slick-active
+    outline: none
+
+.slick-arrow
+    border: none
+    background-color: #fff
+
+.arrow
+    top: 50%
+    transform: translateY(-50%)
+    position: absolute
+    z-index: 99
+    width: 2rem
+    height: 2rem
+    border: none
+
+.prev
+    left: 0
+    background: url(../pic/features/left-arrow.svg) center no-repeat
+    background-size: 100%
+.next
+    right: 0
+    background: url(../pic/features/right-arrow.svg) center no-repeat
+    background-size: 100%
+
+// modal-windows
+
+.popup
+    display: none
+    position: fixed
+    left: 0
+    bottom: 0
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 9
+    &-header
+        @include bold
+    &-close
+        position: absolute
+        font-size: 3.5rem
+        top: -1.7rem
+        right: -3rem
+        text-align: center
+        border: none
+        background-color: transparent
+        width: 2rem
+        color: #fff
+    &-form
+        margin: 0
+    &-content
+        width: 37rem
+        position: fixed
+        left: 50%
+        background-color: #fff
+        transform: translateX(-50%)
+        padding: 1rem
+        top: 10%
+        text-align: center
+    textarea
+        padding: 1rem
+        height: 10rem
+
+.price
+    text-align: center
+    background: $greenblock url(../pic/price.png) center
+    &-header
+        color: #ffffff
+        font-size: 3rem
+        font-weight: 700
+        margin-bottom: 4rem
+    &-postheader
+        color: #ffffff
+        font-size: 1.4rem
+        font-weight: 400
+    &-button
+        margin-top: 2.8rem
+        padding: 1.5rem 4rem
+        font-size: 1.4rem
+        font-weight: 400
+        text-transform: uppercase
+        border-radius: 0.5rem
+    &-block
+        background-color: #fff
+        padding: 3rem
+        box-shadow: 0 14px 21px rgba(0, 0, 0, 0.17)
+        margin-top: 7rem
+        h4
+            @include bold
+            margin-bottom: 2rem
+            font-size: 1.6rem
+            line-height: 20px
+        img
+            width: 100%
+            max-width: 30rem
+        h5
+            @include bold
+            font-size: 1.6rem
+            font-weight: 700
+            .price-n
+                font-size: 2.4rem
+    &-tag
+        margin-top: 2rem
+    &-list
+        list-style: none
+        min-height: 15rem
+        margin-top: 2rem
+        font-size: 1.7rem
+        font-weight: 500
+        line-height: 2.5rem
+        padding: 0
+        li
+            &:before
+                content: ''
+                display: inline-block
+                width: 3rem
+                height: 3rem
+                background: url(../pic/checked.png) no-repeat center
+                vertical-align: middle
+
+.media
+    font-size: 1.4rem
+    margin-top: 3rem
+    &-heading
+        @include bold
+        margin-top: 0.5rem
+    &-object
+        border-radius: 5rem
+    &-body
+        span
+            @include bold
+
+.feedback
+    position: relative
+    background: url('../pic/feedback/feedback-bg.png') center no-repeat
+    background-size: cover
+    &-prev-btn
+        left: -4rem
+    &-next-btn
+        right: -4rem
+    &-slider
+        padding: 5rem 6rem
+        box-shadow: 0 12px 18px rgba(0, 0, 0, 0.11)
+        background-color: #ffffff
+        &-btn
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            width: 4rem
+            height: 5rem
+            background-color: $ico-color
+        &-item
+            p
+                font-size: 1.6rem
+    &-text
+        position: relative
+        margin-top: 2rem
+        padding: 1rem
+        border: 2px solid $ico-color
+        font-size: 1rem
+        font-weight: 400
+        font-style: italic
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            top: -2rem
+            left: 4rem
+            width: 2rem
+            height: 2.05rem
+            background-color: #fff
+            border: 2px solid $ico-color
+            border-bottom: none
+            border-top-right-radius: 5rem
+    &-form
+        padding: 5rem 10rem
+        h2
+            margin-bottom: 3rem
+        .button
+            width: 50%
+            margin-top: 1rem
+    img.hand
+        position: absolute
+        bottom: 0
+        left: 5rem
+        max-width: 30rem
+
+.scheme
+    background: #ffffff url(../pic/scheme/hand.png) bottom -15rem right -15rem no-repeat
+    background-size: 55%
+    &-header
+        margin-bottom: 5rem
+    &-block
+        min-height: 35rem
+    &-postheader
+        margin-bottom: 5rem
+        text-align: center
+        font-size: 1.6rem
+        font-weight: 400
+    p
+        font-size: 1.7rem
+        font-weight: 400
+        line-height: 1.8rem
+    h3
+        @include bold
+        font-size: 2rem
+        margin-bottom: 2rem
+
+.all-inc
+    background-color: #f5f5f5
+    &-header
+        color: $ico-color
+        font-size: 5rem
+        margin-bottom: 5rem
+    &-postheader
+        margin-bottom: 10rem
+        text-align: center
+        font-size: 1.6rem
+        font-weight: 400
+        line-height: 18px
+    .media
+        min-height: 14rem
+        h4
+            @include bold
+            font-size: 1.6rem
+        font-size: 1.3rem
+
+// all-inc circle
+.circle
+    display: inline-block
+    background-color: $ico-color
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    &-border
+        @include bold
+        padding: 0.3rem
+        color: #ffffff
+        display: inline-block
+        width: 5rem
+        height: 5rem
+        border: 2px solid $ico-color
+        border-radius: 50%
+        text-align: center
+        line-height: 4rem
+        font-size: 1.9rem
+
+@media (max-width: 991px)
+    .main
+        background-position: top right
+        &-content
+            text-align: center
+    .phone-block
+        text-align: center
+    img.hand
+        display: none
+    .feedback
+        &-prev-btn
+            left: 0
+        &-next-btn
+            right: 0
+    .scheme
+        background-size: 70rem
+
+@media (max-width: 767px)
+    .header
+        text-align: center
+    .main
+        background-position: top left
+        &-title
+            margin-top: 8rem
+    .feedback
+        &-form
+            .button
+                width: 100%
+    .scheme
+        background: none
+        text-align: center
+        &-block
+            min-height: 30rem
+
+@media (max-width: 470px)
+    .main-content
+        .main-title
+            font-size: 2.4rem
