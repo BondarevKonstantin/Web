@@ -63,7 +63,8 @@ a:hover {
     background-color: #e2a002; }
 
 section {
-  padding: 6rem 0; }
+  padding: 6rem 0;
+  position: relative; }
 
 .main {
   background: #ffffff url(../pic/main-bg.png) center center no-repeat;
@@ -389,6 +390,53 @@ section {
     line-height: 4rem;
     font-size: 1.9rem; }
 
+.problems-list {
+  padding: 3rem;
+  padding-left: 0;
+  border: 4px solid;
+  min-height: 33rem; }
+  .problems-list ul {
+    padding-left: 3rem;
+    list-style: none; }
+    .problems-list ul li {
+      position: relative;
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 18px;
+      padding-left: 3.5rem; }
+      .problems-list ul li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3rem;
+        height: 3rem; }
+  .problems-list h4 {
+    margin-left: 4rem;
+    font-family: "ProximaNova_bold", sans-serif;
+    opacity: 0.5;
+    font-size: 2.1rem;
+    line-height: 18px; }
+  .problems-list-bad ul li:before {
+    background: url(../pic/problems/cross.png) center no-repeat; }
+  .problems-list-good {
+    border-color: #49bf15; }
+    .problems-list-good ul li:before {
+      background: url(../pic/problems/check.png) center no-repeat; }
+    .problems-list-good h4 {
+      opacity: 1; }
+.problems-girl {
+  position: absolute;
+  width: 30rem;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20rem; }
+
+@media (max-width: 1200px) {
+  .problems-list {
+    min-height: 37rem; } }
 @media (max-width: 991px) {
   .main {
     background-position: top right; }
@@ -407,7 +455,13 @@ section {
     right: 0; }
 
   .scheme {
-    background-size: 70rem; } }
+    background-size: 70rem; }
+
+  .problems-list {
+    min-height: auto;
+    margin-bottom: 4rem; }
+  .problems-girl {
+    display: none; } }
 @media (max-width: 767px) {
   .header {
     text-align: center; }
