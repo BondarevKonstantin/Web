@@ -79,7 +79,7 @@
                         <input type="email" class="form-email" id="form1-email" name="user_email" placeholder="E-mail">
                     </div>
                     <div class="col-12 col-lg-4">
-                        <input type="tel" class="form-phone" id="form1-phone" name="user_phone"
+                        <input type="phone" class="form-phone" id="form1-phone" name="user_phone"
                             placeholder="Номер телефона" required>
                     </div>
                 </div>
@@ -416,6 +416,60 @@
         </div>
     </div>
 
-<script src="/js/script.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/plugins/validator.js"></script>
+<script>
+    const valid1 = new Validator({
+        selector: '#form1',
+        pattern: {},
+        method: {
+            'form1-name': [],
+            'form1-phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+            'form1-email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+    })
+
+    const valid2 = new Validator({
+        selector: '#form2',
+        pattern: {},
+        method: {
+            'form2-name': [],
+            'form2-phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+            'form2-email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+    })
+
+    const valid3 = new Validator({
+        selector: '#form3',
+        pattern: {},
+        method: {
+            'form3-name': [],
+            'form3-phone': [
+                ['notEmpty'],
+                ['pattern', 'phone']
+            ],
+            'form3-email': [
+                ['notEmpty'],
+                ['pattern', 'email']
+            ]
+        }
+    })
+
+    valid1.init();
+    valid2.init();
+    valid3.init();
+</script>
 </body>
 </html>
