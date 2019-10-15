@@ -421,9 +421,14 @@
 <script>
     const valid1 = new Validator({
         selector: '#form1',
-        pattern: {},
+        pattern: {phone: /^\+7\d{10}$/,
+                name: /^[а-яё]+\s*$/i
+        },
         method: {
-            'form1-name': [],
+            'form1-name': [
+            ['notEmpty'],
+            ['pattern', 'name']
+            ],
             'form1-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
@@ -437,9 +442,15 @@
 
     const valid2 = new Validator({
         selector: '#form2',
-        pattern: {},
+        pattern: {phone: /^\+7\d{10}$/,
+                name: /^[а-яё]+\s*$/i,
+                message: /^[а-яё]+\s*$/i
+        },
         method: {
-            'form2-name': [],
+            'form2-name': [
+            ['notEmpty'],
+            ['pattern', 'name']
+            ],
             'form2-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
@@ -447,15 +458,23 @@
             'form2-email': [
                 ['notEmpty'],
                 ['pattern', 'email']
+            ],
+            'form2-message': [
+                ['pattern', 'message']
             ]
         }
     })
 
     const valid3 = new Validator({
         selector: '#form3',
-        pattern: {},
+        pattern: {phone: /^\+7\d{10}$/,
+                name: /^[а-яё]+\s*$/i
+        },
         method: {
-            'form3-name': [],
+            'form3-name': [
+            ['notEmpty'],
+            ['pattern', 'name']
+            ],
             'form3-phone': [
                 ['notEmpty'],
                 ['pattern', 'phone']
@@ -470,6 +489,7 @@
     valid1.init();
     valid2.init();
     valid3.init();
+
 </script>
 </body>
 </html>
