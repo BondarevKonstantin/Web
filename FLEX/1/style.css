@@ -1,0 +1,22 @@
+body {
+    background-color: #eeeeee;
+    padding: 3rem;
+}
+
+.header {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.instruments {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inst {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}

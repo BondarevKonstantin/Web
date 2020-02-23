@@ -1,0 +1,30 @@
+.slider
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #ffffff
+    background-color: #aeaeae
+    &__item
+        height: 100vh
+        justify-content: center
+        font-family: 'Bad Script', sans-serif
+        flex-basis: 25%
+        transition: all 0.2s
+        display: flex
+        align-items: center
+        font-size: 3rem
+        text-shadow: 5px 5px 5px #000
+        &:hover
+            flex-basis: 50%
+        &-1
+            background: url('1.jpg') center no-repeat
+            background-size: cover
+        &-2
+            background: url('2.png') center no-repeat
+            background-size: cover
+        &-3
+            background: url('3.jpg') center no-repeat
+            background-size: cover
+        &-4
+            background: url('4.jpg') center no-repeat
+            background-size: cover

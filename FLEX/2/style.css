@@ -1,0 +1,32 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #aeaeae; }
+  .slider__item {
+    height: 100vh;
+    justify-content: center;
+    font-family: "Bad Script", sans-serif;
+    flex-basis: 25%;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    text-shadow: 5px 5px 5px #000; }
+    .slider__item:hover {
+      flex-basis: 50%; }
+    .slider__item-1 {
+      background: url("1.jpg") center no-repeat;
+      background-size: cover; }
+    .slider__item-2 {
+      background: url("2.png") center no-repeat;
+      background-size: cover; }
+    .slider__item-3 {
+      background: url("3.jpg") center no-repeat;
+      background-size: cover; }
+    .slider__item-4 {
+      background: url("4.jpg") center no-repeat;
+      background-size: cover; }
+
+/*# sourceMappingURL=style.css.map */
