@@ -14,8 +14,7 @@ html {
   font-size: 10px; }
 
 body {
-  font-family: "ProximaNova_reg", sans-serif;
-  background-color: rgb(179, 255, 0) }
+  font-family: "ProximaNova_reg", sans-serif; }
 
 button:focus, input:focus, a:focus, textarea:focus {
   outline: none; }
@@ -26,7 +25,7 @@ a:hover {
 .form {
   margin-top: 3.5rem;
   padding: 3rem 5rem;
-  background-color: rgb(0, 38, 255);
+  background-color: #fff;
   text-align: center; }
   .form-header {
     margin-bottom: 3rem;
@@ -68,8 +67,7 @@ section {
   position: relative; }
 
 .main {
-  background: #ff0000 center center no-repeat;
-  color: #e2a002;
+  background: #ffffff url(../pic/main-bg.png) center center no-repeat;
   background-size: cover;
   padding: 3rem 0; }
   .main-button {
