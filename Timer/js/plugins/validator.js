@@ -14,7 +14,10 @@ class Validator{
     }
 
     init() {
-        this.applyStyle();
+        const validatorStyleTag = document.querySelector('.validator-add-style');
+        if (!validatorStyleTag) {
+            this.applyStyle();
+        }
         this.setPattern();
         this.elementsForm.forEach(elem => elem.addEventListener('change', this.checkIt.bind(this)));
         this.form.addEventListener('submit', submit => {
@@ -87,6 +90,7 @@ class Validator{
 
     applyStyle() {
         const style = document.createElement('style');
+        style.classList = 'validator-add-style';
         style.textContent = `
         input.success {
             border: 2px solid green
